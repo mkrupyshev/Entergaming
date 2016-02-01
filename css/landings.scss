@@ -1,0 +1,655 @@
+@import "reset";
+@import "colors";
+@import "typography";
+@import "margins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100%;
+}
+body {
+  position: relative;
+  min-height: 100%;
+  padding-top: 150px;
+  padding-bottom: 70px;
+}
+.container-fluid {
+  max-width: 1180px;
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  padding-top: 70px;
+  background-color: #142634;
+  .logo {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  nav {
+    &.nav-left {
+      float: left;
+      width: 50%;
+      padding-right: 70px;
+    }
+    &.nav-right {
+      float: left;
+      width: 50%;
+      padding-left: 70px;
+    }
+    ul {
+      list-style: none;
+      width: 100%;
+      li {
+        display: inline-block;
+        width: 33%;
+        float: left;
+        text-align: center;
+        a {
+          padding: 10px 15px;
+          color: $color-white;
+          font-family: "OpenSans ExtraBold";
+          font-size: 18px;
+          text-decoration: none;
+          text-transform: uppercase;
+          &:hover {
+            color: $color-grey2;
+            text-decoration: none;
+          }
+          &:active {
+            color: $color-grey2;
+            text-decoration: none;
+          }
+          &:focus {
+            color: $color-grey2;
+            text-decoration: none;
+
+          }
+          &:active:focus {
+            color: $color-grey2;
+            text-decoration: none;
+          }
+          &.active {
+            position: relative;
+            top: -5px;
+            color: $color-grey2;
+            text-decoration: none;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+  .menu-button {
+    display: none;
+  }
+  .menu-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color: $color-black;
+    transform: translate(0,-100%);
+    transition: 250ms transform ease;
+    ul {
+      list-style: none;
+      width: 100%;
+      li {
+        display: block;
+        text-align: center;
+        padding: 10px 15px;
+        a {
+          padding: 10px 15px;
+          color: $color-white;
+          font-family: "OpenSans ExtraBold";
+          text-decoration: none;
+          text-transform: uppercase;
+          &:hover {
+            color: $color-grey2;
+            text-decoration: none;
+          }
+          &:active {
+            color: $color-grey2;
+            text-decoration: none;
+          }
+          &:focus {
+            color: $color-grey2;
+            text-decoration: none;
+
+          }
+          &:active:focus {
+            color: $color-grey2;
+            text-decoration: none;
+          }
+          &.active {
+            color: $color-grey2;
+            text-decoration: none;
+            font-size: 24px;
+          }
+        }
+      }
+    }
+    &.active {
+      transform: translate(0,0);
+    }
+  }
+  @media screen and (min-width: 601px) and (max-width: 990px) {
+    padding-top: 40px;
+    .logo {
+      left: 15px;
+      right: initial;
+      margin: 0;
+    }
+    nav {
+      padding-top: 10px;
+      &.nav-left {
+        float: left;
+        width: 100%;
+        padding-left: 160px;
+        padding-right: 0;
+      }
+      &.nav-right {
+        float: left;
+        width: 100%;
+        padding-left: 160px;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    padding-top: 40px;
+    .logo {
+      left: 15px;
+      right: initial;
+      margin: 0;
+    }
+    nav {
+      display: none;
+    }
+    .menu-button {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 1001;
+      &:hover {
+        .bar {
+          background-color: $color-grey2;
+        }
+      }
+      .bar {
+        background-color: $color-white;
+        position: relative;
+        display: block;
+        width: 32.284px;
+        height: 4px;
+        line-height: 1px;
+        margin: 6px 0;
+      }
+      &.active {
+        .bar-1 {
+          transform: rotate(45deg);
+          top: 10px;
+        }
+        .bar-2 {
+          opacity:0;
+        }
+        .bar-3 {
+          transform: rotate(-45deg);
+          top: -9px;
+        }
+      }
+    }
+  }
+}
+section {
+  &.section-welcome {
+    padding-top: 125px;
+    padding-bottom: 150px;
+    background-color: #142634;
+    h1 {
+      color: $color-white;
+      font-family: "Raleway ExtraBold";
+      font-size: 80px;
+      text-transform: uppercase;
+      .h1-secondary {
+        font-size: 18px;
+      }
+      .icon-heart {
+        position: relative;
+        top: 5px;
+      }
+      .icon-dot {
+        position: relative;
+        left: 2px;
+      }
+    }
+    @media screen and (min-width: 601px) and (max-width: 990px) {
+      h1 {
+        font-size: 60px;
+        .icon-heart {
+          width: 62px;
+        }
+        .icon-dot {
+          width: 7px;
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      padding-top: 75px;
+      padding-bottom: 75px;
+      h1 {
+        font-size: 48px;
+        .icon-heart {
+          width: 54px;
+        }
+        .icon-dot {
+          width: 6px;
+        }
+      }
+    }
+  }
+  &.section-about {
+    background-color: #242424;
+    padding-top: 65px;
+    padding-bottom: 60px;
+    h2 {
+      margin-bottom: 100px;
+      .red {
+        color: #DC163C;
+      }
+    }
+    p {
+      margin-bottom: 100px;
+      color: $color-white;
+      font-family: "OpenSans Regular";
+      font-size: 24px;
+      line-height: 48px;
+      text-align: center;
+    }
+    a.btn-readmore {
+      display: block;
+      width: 290px;
+      height: 60px;
+      margin: 0 auto;
+      border-radius: 2px;
+      background-color: $color-yellow1;
+      color: $color-white;
+      font-family: "Raleway SemiBold";
+      font-size: 24px;
+      line-height: 60px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        background-color: darken($color-yellow1, 10%);
+      }
+    }
+    @media screen and (max-width: 600px) {
+      h2 {
+        margin-bottom: 25px;
+      }
+      p {
+        margin-bottom: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+  &.section-components {
+    padding-top: 75px;
+    padding-bottom: 25px;
+    background-color: #fff;
+    color: $color-grey1;
+    h2 {
+      margin-bottom: 100px;
+      color: $color-grey1;
+    }
+    .block {
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+    h3 {
+      margin-top: 125px;
+      margin-bottom: 30px;
+      color: $color-grey1;
+      font-family: "Raleway SemiBold";
+      font-size: 22px;
+    }
+    p {
+      margin-bottom: 55px;
+      color: $color-grey2;
+      font-family: "Raleway Light";
+      font-size: 14px;
+      line-height: 24px;
+    }
+    a.btn-more {
+      display: block;
+      width: 290px;
+      height: 45px;
+      margin-bottom: 25px;
+      border-radius: 2px;
+      color: #fff;
+      font-family: "Raleway SemiBold";
+      font-size: 24px;
+      line-height: 45px;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      &.red1 {
+        background-color: $color-red1;
+        &:hover {
+          background-color: darken($color-red1, 10%);
+        }
+      }
+      &.blue1 {
+        background-color: $color-blue1;
+        &:hover {
+          background-color: darken($color-blue1, 10%);
+        }
+      }
+      &.green1 {
+        background-color: $color-green1;
+        &:hover {
+          background-color: darken($color-green1, 10%);
+        }
+      }
+      &.green2 {
+        background-color: $color-green2;
+        &:hover {
+          background-color: darken($color-green2, 10%);
+        }
+      }
+      &.yellow1 {
+        background-color: $color-yellow1;
+        &:hover {
+          background-color: darken($color-yellow1, 10%);
+        }
+      }
+      &.blue2 {
+        background-color: $color-blue2;
+        &:hover {
+          background-color: darken($color-blue2, 10%);
+        }
+      }
+      &.green3 {
+        background-color: $color-green3;
+        &:hover {
+          background-color: darken($color-green3, 10%);
+        }
+      }
+    }
+    .circle-large-outer {
+      position: relative;
+      display: block;
+      width: 400px;
+      height: 400px;
+      border: 10px solid;
+      border-radius: 50%;
+      &.red1 {
+        border-color: $color-red1;
+      }
+      &.blue1 {
+        border-color: $color-blue1;
+      }
+      &.green1 {
+        border-color: $color-green1;
+      }
+      &.green2 {
+        border-color: $color-green2;
+      }
+      &.yellow1 {
+        border-color: $color-yellow1;
+      }
+      &.blue2 {
+        border-color: $color-blue2;
+      }
+      &.green3 {
+        border-color: $color-green3;
+      }
+      &.left {
+        float: left;
+      }
+      &.right {
+        float: right;
+      }
+      .circle-large-inner {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: block;
+        height: 350px;
+        width: 350px;
+        border-radius: 50%;
+        background-color: $color-grey3;
+        .circle-large-icon {
+          position: relative;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);
+        }
+      }
+      .circle-small {
+        display: block;
+        height: 180px;
+        width: 180px;
+        border: 10px solid $color-grey3;
+        border-radius: 50%;
+        &.red1 {
+          background-color: $color-red1;
+        }
+        &.blue1 {
+          background-color: $color-blue1;
+        }
+        &.green1 {
+          background-color: $color-green1;
+        }
+        &.green2 {
+          background-color: $color-green2;
+        }
+        &.yellow1 {
+          background-color: $color-yellow1;
+        }
+        &.blue2 {
+          background-color: $color-blue2;
+        }
+        &.green3 {
+          background-color: $color-green3;
+        }
+        &.left {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(-50%,80%);
+        }
+        &.right {
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translate(50%,80%);
+        }
+        .circle-small-number {
+          display: block;
+          color: $color-white;
+          font-family: "Raleway ExtraBold";
+          font-size: 100px;
+          line-height: 144px;
+          text-align: center;
+        }
+      }
+    }
+    @media screen and (max-width: 991px) {
+      h3 {
+        margin-top: 0;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      a.btn-more {
+        margin: 0 auto 25px auto;
+      }
+      .circle-large-outer {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        &.left {
+          float: none;
+        }
+        &.right {
+          float: none;
+        }
+        .circle-large-inner {
+          height: 175px;
+          width: 175px;
+          .circle-large-icon {
+            width: 100px;
+          }
+        }
+        .circle-small {
+          height: 90px;
+          width: 90px;
+          .circle-small-number {
+            font-size: 48px;
+            line-height: 60px;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      h3 {
+        margin-top: 25px;
+        text-align: center;
+      }
+      p {
+        margin-bottom: 25px;
+        text-align: center;
+      }
+      a.btn-more {
+        margin: 0 auto 25px auto;
+      }
+    }
+    @media (max-width: 767px) {
+      .row.reorder-xs {
+        transform: rotate(180deg);
+        direction: rtl;
+      }
+      .row.reorder-xs > [class*="col-"] {
+        transform: rotate(-180deg);
+        direction: ltr;
+      }
+    }
+
+  }
+  &.section-contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #142634;
+    h2 {
+      margin-bottom: 65px;
+    }
+    p {
+      display: table;
+      margin: auto;
+      color: $color-grey2;
+      font-family: "Raleway Light";
+      font-size: 16px;
+      line-height: 24px;
+      @media screen and (max-width: 768px) {
+        text-align: center;
+      }
+    }
+    a {
+      color: $color-grey2;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  &.section-main {
+    background-size: cover;
+    padding-top: 100px;
+    &.multi {
+      background: url(../images/back/Illust_page1.png) no-repeat center center;
+    }
+    &.all {
+      background: url(../images/back/Illust_page2.png) no-repeat center center;
+    }
+    &.built {
+      background: url(../images/back/Illust_page3.png) no-repeat center center;
+    }
+    &.risk {
+      background: url(../images/back/Illust_page4.png) no-repeat center center;
+    }
+    &.bonus {
+      background: url(../images/back/Illust_page5.png) no-repeat center center;
+    }
+    &.affiliate {
+      background: url(../images/back/Illust_page6.png) no-repeat center center;
+    }
+    &.future {
+      background: url(../images/back/Illust_page7.png) no-repeat center center;
+    }
+    h1 {
+      color: $color-white;
+      font-family: "Raleway ExtraBold";
+      font-size: 60px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+    h5 {
+      color: $color-white;
+      font-family: "OpenSans ExtraBold";
+      font-size: 24px;
+      line-height: 48px;
+    }
+    h6 {
+      color: $color-white;
+      font-family: "OpenSans Bold";
+      font-size: 24px;
+      line-height: 48px;
+    }
+    p {
+      color: $color-white;
+      font-family: "OpenSans Regular";
+      font-size: 20px;
+      line-height: 48px;
+    }
+    ul {
+      color: $color-white;
+      font-family: "OpenSans Regular";
+      font-size: 20px;
+      line-height: 48px;
+    }
+  }
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  padding-top: 16px;
+  padding-bottom: 32px;
+  background-color: #142634;
+  h4 {
+    color: $color-grey2;
+    font-family: "Raleway Regular";
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}

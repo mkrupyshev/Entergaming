@@ -1,0 +1,24 @@
+@font-face {font-family:'OpenSans Regular'; font-style:normal; src:url(../fonts/OpenSans-Regular.ttf) format('opentype');}
+@font-face {font-family:'OpenSans Bold'; font-style:normal; src:url(../fonts/OpenSans-Bold.ttf) format('opentype');}
+@font-face {font-family:'OpenSans ExtraBold'; font-style:normal; src:url(../fonts/OpenSans-ExtraBold.ttf) format('opentype');}
+
+@font-face {font-family:'Raleway Regular'; font-style:normal; src:url(../fonts/Raleway-Regular.ttf) format('opentype');}
+@font-face {font-family:'Raleway Thin'; font-style:normal; src:url(../fonts/Raleway-Thin.ttf) format('opentype');}
+@font-face {font-family:'Raleway Light'; font-style:normal; src:url(../fonts/Raleway-Light.ttf) format('opentype');}
+@font-face {font-family:'Raleway SemiBold'; font-style:normal; src:url(../fonts/Raleway-SemiBold.ttf) format('opentype');}
+@font-face {font-family:'Raleway ExtraBold'; font-style:normal; src:url(../fonts/Raleway-ExtraBold.ttf) format('opentype');}
+
+$default-font-family : 'OpenSans Regular', sans-serif;
+$default-font-weight : 400;
+$default-text-color  : $color-black;
+
+h2 {
+  color: $color-white;
+  font-family: "Raleway ExtraBold";
+  font-size: 36px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.rw-thin {font-family: "Raleway Thin";}
+.rw-eb {font-family: "Raleway ExtraBold";}
+.os-bold {font-family: "OpenSans Bold";}
